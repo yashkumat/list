@@ -410,12 +410,12 @@
             <li class="list-group-item">
                 <div class="fw-bold title">Fair & Lovely</div>
                 <div>
-                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Fair & Lovely',['Rs. 10'])">Rs. 10</button>
-                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Fair & Lovely',['Big'])">Big</button>
-                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Fair & Lovely',['Small'])">Small</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Fair and Lovely',['Rs. 10'])">Rs. 10</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Fair and Lovely',['Big'])">Big</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Fair and Lovely',['Small'])">Small</button>
                 </div>
               <div class="text-end item_quantity">
-                <span class="pill-custom" id="Fair & Lovely"></span>
+                <span class="pill-custom" id="Fair and Lovely"></span>
               </div>
             </li>
             <li class="list-group-item">
@@ -658,7 +658,7 @@
         "Mohari" : 0,
         "Maggi Masala" : 0,
         "Meat Masala" : 0,
-        "Fair & Lovely" : "",
+        "Fair and Lovely" : "",
         "Ponds Powder": "",
         "Dish Soap" : 0,
         "Cloth Soap" : 0,
@@ -694,9 +694,7 @@
           document.getElementById(item).innerHTML = final_item
 
         }
-
         list[item] = final_quantity
-
       }
 
       function add_item_type(item, type){
@@ -705,35 +703,23 @@
 
 
       function sendMessage(){
-        // window.open(`https://wa.me/+919527526222?text=${list}`, '_blank');
         var all = document.getElementsByClassName('list-group-item')
-        // all.forEach(element => {
-        //   console.log(element)
-        // });  
+
         for (let index = 0; index < all.length; index++) {
           const element = all[index];
           var pill_custom = element.getElementsByClassName('pill-custom')
           var pill_custom_type = element.getElementsByClassName('pill-custom-type')
           var item = element.getElementsByClassName('title')
-          // if(pill_custom_type[0]){
-          //   console.log(pill_custom_type[0].innerHTML)
-          // }else{
-          //   console.log(pill_custom[0].innerHTML + " " + pill_custom_type[0].innerHTML)
-          // }
 
           if(item[0].innerHTML && pill_custom[0].innerHTML ){
             if(pill_custom_type[0]){
-              // console.log(item[0].innerHTML + " - " + pill_custom_type[0].innerHTML + " " + pill_custom[0].innerHTML)
               message+=item[0].innerHTML + " - " + pill_custom_type[0].innerHTML + " " + pill_custom[0].innerHTML+ '%0D%0A'
             }else{
-              // console.log(item[0].innerHTML+ " - " + pill_custom[0].innerHTML)
               message+=item[0].innerHTML+ " - " + pill_custom[0].innerHTML+ '%0D%0A'
             }
           }
         }
-        // console.log(message)
         window.open(`https://wa.me/+919527526222?text=${message}`, '_blank');
-
       }
     </script>
   </body>
