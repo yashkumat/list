@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mahavir Kirana</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+      .pill-custom, .pill-custom-type{
+        font-size: 1.5em;
+        font-weight: 500;
+        border-radius: 1em;
+        color: #6c757d;
+      }
+      .title{
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+      .type{
+        margin-bottom: 5px;
+      }
+      li{
+        margin-bottom: 20px;
+        box-shadow: 2px 2px 5px gray;
+        border-radius: 20px;
+        border: 1px solid gray;
+      }
+      @media ( max-width: 480px ){
+        .margin-top{
+          margin-top: 20px;
+        }
+      }
+      .footer-text{
+        text-decoration: none;
+        color: #6c757d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container p-md-4 p-sm-2 margin-top">
+      <div class="row mb-4">
+        <div class="col-12 d-flex justify-content-between">
+          <div>
+            <h4>Sanjay Kumat</h4>
+            <p>9822119713</p>
+          </div>
+          <div class="text-center">
+            <h1>Mahavir Kirana, Ghoti</h1>
+          </div>
+          <div>
+            <h4>Suyash Kumat</h4>
+            <p>8888119713</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <ol class="list-group">
+            <li class="list-group-item">
+                <div class="fw-bold title">Sugar</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Sugar',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Sugar',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Sugar', [5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Sugar', [10, 'Kg'])">10 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Sugar"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Jaggery</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Jaggery',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Jaggery',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Jaggery', [5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Jaggery', [10, 'Kg'])">10 Kg</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Jaggery"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Salt</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Salt',[1, '- Rs. 10'])">Rs. 10 / 1 Kg</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Salt"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Shabudana</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Shabudana',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Shabudana',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Shabudana',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Shabudana',[10, 'Kg'])">10 Kg</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Shabudana"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Shengdana</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Shengdana',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Shengdana',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Shengdana',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Shengdana',[10, 'Kg'])">10 Kg</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Shengdana"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Bhagar</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Bhagar',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Bhagar',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Bhagar',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Bhagar',[10, 'Kg'])">10 Kg</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Bhagar"></span>
+              </div>
+              
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Poha</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Poha',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Poha',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Poha',[1, 'Pouch'])">1 Kg Pouch</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Poha"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Rawa</div>
+                <div class="type">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Rawa','Big')">Big</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Rawa','Small')">Small</button>  
+                </div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Rawa',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Rawa',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Rawa',[1, 'Pouch'])">1Kg Pouch</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom-type" id="Rawa Type"></span>
+                <span class="pill-custom" id="Rawa"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Maida</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Maida',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Maida',[1, 'Kg'])">1Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Maida',[1, 'Pouch'])">1Kg Pouch</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Maida"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Tur Dal</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Tur Dal',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Tur Dal',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Tur Dal',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Tur Dal',[10, 'Kg'])">10 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Tur Dal"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Moong Dal</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moong Dal',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moong Dal',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moong Dal',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moong Dal',[10, 'Kg'])">10 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Moong Dal"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Masor Dal</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masor Dal',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masor Dal',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masor Dal',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masor Dal',[10, 'Kg'])">10 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Masor Dal"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Chana Dal</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Chana Dal',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Chana Dal',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Chana Dal',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Chana Dal',[10, 'Kg'])">10 Kg</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Chana Dal"></span>
+              </div>
+              
+            </li>
+            <li class="list-group-item">
+              
+                <div class="fw-bold title">Vatana Dal</div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Vatana Dal',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Vatana Dal',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Vatana Dal',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Vatana Dal',[10, 'Kg'])">10 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Vatana Dal"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">White Urad Dal</div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('White Urad Dal',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('White Urad Dal',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('White Urad Dal',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('White Urad Dal',[10, 'Kg'])">10 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="White Urad Dal"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Black Urad Dal</div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Black Urad Dal',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Black Urad Dal',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Black Urad Dal',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Black Urad Dal',[10, 'Kg'])">10 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Black Urad Dal"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+              <div class="">
+                <div class="fw-bold title">Moth</div>
+                <div class="">
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moth',[0.5, 'Kg'])">500gm</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moth',[1, 'Kg'])">1 Kg</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moth',[5, 'Kg'])">5 Kg</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moth',[10, 'Kg'])">10 Kg</button>
+              </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Moth"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Moong</div>
+                <div class="">
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moong',[0.5, 'Kg'])">500gm</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moong',[1, 'Kg'])">1 Kg</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moong',[5, 'Kg'])">5 Kg</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Moong',[10, 'Kg'])">10 Kg</button>
+              </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Moong"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Masor</div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masor',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masor',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masor',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masor',[10, 'Kg'])">10 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Masor"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Chana</div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Chana',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Chana',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Chana',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Chana',[10, 'Kg'])">10 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Chana"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Vatana</div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Vatana',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Vatana',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Vatana',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Vatana',[10, 'Kg'])">10 Kg</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Vatana"></span>
+              </div>
+              
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Kaboli Chana</div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Kaboli Chana',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Kaboli Chana',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Kaboli Chana',[5, 'Kg'])">5 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Kaboli Chana',[10, 'Kg'])">10 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Kaboli Chana"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Oil</div>
+                <div class="type">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Oil', 'Sunflower')">Sunflower</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Oil', 'Soyabean')">Soyabean</button>  
+                </div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Oil', [1, 'Liter Pouch'])">1L Pouch</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Oil', [5, 'Liter Can'])">5L Can</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Oil', [15, 'Kg Can'])">15Kg Can</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Oil', [15, 'Liter Can'])">15L Can</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom-type" id="Oil Type"></span>
+                  <span class="pill-custom" id="Oil"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Soyabean</div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Soyabean',[0.25, 'Kg'])">250gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Soyabean',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Soyabean',[1, 'Kg'])">1 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Soyabean"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+              <div class="">
+                <div class="fw-bold title">Pasta</div>
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Pasta',[0.25, 'Kg'])">250gm</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Pasta',[0.5, 'Kg'])">500gm</button>
+                <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Pasta',[1, 'Kg'])">1 Kg</button>
+              </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Pasta"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Jeera</div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Jeera',[0.25, 'Kg'])">250gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Jeera',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Jeera',[1, 'Kg'])">1Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Jeera',[25, 'Rs. '])">Rs. 25</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Jeera"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Mohari</div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Mohari',[0.25, 'Kg'])">250gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Mohari',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Mohari',[1, 'Kg'])">1Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Mohari',[25, 'Rs. '])">Rs. 25</button>
+                </div>
+              <span class="pill-custom" id="Mohari"></span>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Maggi Masala Rs.5</div>
+                <div class="">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Maggi Masala',[1, 'Pack'])">1 Pack</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Maggi Masala',[6, 'Pack'])">6 Pack</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Maggi Masala',[12, 'Pack'])">12 Pack</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Maggi Masala"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Meat Masala Rs.5</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Meat Masala',[1, 'Pack'])">1 Pack</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Meat Masala',[6, 'Pack'])">6 Pack</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Meat Masala',[12, 'Pack'])">12 Pack</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Meat Masala"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Fair & Lovely</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Fair & Lovely',['Rs. 10'])">Rs. 10</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Fair & Lovely',['Big'])">Big</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Fair & Lovely',['Small'])">Small</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Fair & Lovely"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Ponds Powder</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Ponds Powder',['Small'])">Small</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Ponds Powder', ['Medium'])">Medium</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Ponds Powder', ['Big'])">Big</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Ponds Powder"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              
+                <div class="fw-bold title">Dishwash Soap</div>
+                <div class="type">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Dish Soap', 'Nima')">Nima</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Dish Soap', 'Vim')">Vim</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Dish Soap', 'Patanjali')">Patanjali</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Dish Soap', 'Bartan')">Bartan</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Dish Soap', 'Exo')">Exo</button>
+                </div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Dish Soap', [1, 'bar'])">1 Bar</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Dish Soap', [4, 'bar'])">4 Bar</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Dish Soap', [6, 'bar'])">6 Bar</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Dish Soap', [12, 'bar'])">12 Bar</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom-type" id="Dish Soap Type"></span>
+                  <span class="pill-custom" id="Dish Soap"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+              
+                <div class="fw-bold title">Cloth Soap</div>
+                <div class="type">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Cloth Soap','Super Nirma')">Super Nirma</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Cloth Soap','Rin')">Rin</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Cloth Soap','Surf Excel')">Surf Excel</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Cloth Soap','Tide')">Tide</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Cloth Soap','Shantabai')">Shantabai</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Cloth Soap','Wheel')">Wheel</button>
+                </div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Cloth Soap', [1, 'bar'])">1 Bar</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Cloth Soap', [4, 'bar'])">4 Bar</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Cloth Soap', [6, 'bar'])">6 Bar</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Cloth Soap', [12, 'bar'])">12 Bar</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom-type" id="Cloth Soap Type"></span>
+                  <span class="pill-custom" id="Cloth Soap"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+              
+                <div class="fw-bold title">Body Soap</div>
+                <div class="type">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Body Soap', 'Santoor')">Santoor</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Body Soap', 'Lux')">Lux</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Body Soap', 'Lifebouy')">Lifebouy</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Body Soap', 'Dettol')">Dettol</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Body Soap', 'No. 1')">No. 1</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Body Soap', 'Patanjali')">Patanjali</button>
+                </div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Body Soap', [1, 'bar'])">1 Bar</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Body Soap', [4, 'bar'])">4 Bar</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Body Soap', [6, 'bar'])">6 Bar</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Body Soap', [12, 'bar'])">12 Bar</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom-type" id="Body Soap Type"></span>
+                  <span class="pill-custom" id="Body Soap"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Cloth Powder</div>
+                <div class="type">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Cloth Powder', 'Wheel')">Wheel</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Cloth Powder', 'Rin')">Rin</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Cloth Powder', 'Surf Excel')">Surf Excel</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Cloth Powder', 'Tide')">Tide</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Cloth Powder', 'Nirma')">Nirma</button>
+                </div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Cloth Powder',[0.5, 'Kg'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Cloth Powder',[1, 'Kg'])">1 Kg</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Cloth Powder',[3, 'Kg'])">3 Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+              <span class="pill-custom-type" id="Cloth Powder Type"></span>
+              <span class="pill-custom" id="Cloth Powder"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Toothpaste</div>
+                <div class="type">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Toothpaste', 'Colgate White')">Colgate White</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Toothpaste', 'Maxfresh')">Maxfresh</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Toothpaste', 'Sensodyne')">Sensodyne</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Toothpaste', 'Pepsodent')">Pepsodent</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Toothpaste', 'Patanjali')">Patanjali</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Toothpaste', 'Cibbaca')">Cibbaca</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Toothpaste', 'Dabur Red')">Dabur Red</button>
+                </div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Toothpaste',[10, 'Rs. '])">Rs. 10</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Toothpaste',[20, 'Rs. '])">Rs. 20</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Toothpaste',[50, 'Rs. '])">Rs. 50</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Toothpaste',[100, 'Rs. '])">Rs. 100</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Toothpaste',[200, 'Rs. '])">Rs. 200</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom-type" id="Toothpaste Type"></span>
+                <span class="pill-custom" id="Toothpaste"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Masala</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masala',['Rs. 10 - Pavbhaji'])">Pav Bhaji Rs. 10</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masala',['50 gm - Pavbhaji'])">Pav Bhaji 50gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masala',['Rs. 10 - ShevBhaji'])">Shev Bhaji Rs. 10</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masala',['50 gm - ShevBhaji'])">Shev Bhaji 50gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masala',['Rs. 10 - Chola'])">Chole Rs. 10</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masala',['50gm - Chola'])">Chole 50gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masala',['Rs. 10 - Sambar'])">Sambar Rs. 10</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masala',['50gm - Sambar'])">Sambar 50gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masala',['Rs. 10 - Tea'])">Tea Rs. 10</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Masala',['50gm - Tea'])">Tea 50gm</button>
+                </div>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="Masala"></span>
+              </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Tea</div>
+                <div class="type">
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Tea', 'Parivar')">Parivar</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Tea', 'Sapat')">Sapat</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Tea', 'Indrayani')">Indrayani</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Tea', 'Sahiyadri Plain')">Sahiyadri Plain</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Tea', 'Sahiyadri Ilaichi')">Sahiyadri Ilaichi</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Tea', 'Red Label')">Red Label</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Tea', 'Vikram')">Vikram</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item_type('Tea', 'Loose')">Loose</button>
+                </div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Tea',[0.125, 'gms'])">125gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Tea',[0.25, 'gms'])">250gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Tea',[0.5, 'gms'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Tea', [1, 'Kg'])">1Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom-type" id="Tea Type"></span>
+                  <span class="pill-custom" id="Tea"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Coffee</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Coffee', [6, 'Rs. 2 Sachet'])">6  - Rs. 2 Sachet</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Coffee', [12, 'Rs. 2 Sachet'])">12 - Rs. 2 Sachet</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Coffee', ['Small Bottle'])">Small Bottle</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Coffee', ['Big Bottle'])">Big Bottle</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Coffee"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Mirchi Powder</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Mirchi Powder', ['Rs. 10'])">Rs. 10</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Mirchi Powder', [ '100 gms'])">100gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Mirchi Powder', [ '250 gms'])">250gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Mirchi Powder', [ '500 gms'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Mirchi Powder', [ '1 Kg'])">1Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Mirchi Powder"></span>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="fw-bold title">Haldi Powder</div>
+                <div>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Haldi Powder', ['Rs. 10'])">Rs. 10</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Haldi Powder', [ '100 gms'])">100gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Haldi Powder', [ '250 gms'])">250gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Haldi Powder', [ '500 gms'])">500gm</button>
+                  <button class="btn btn-outline-secondary btn-sm" onclick="add_item('Haldi Powder', [ '1 Kg'])">1Kg</button>
+                </div>
+                <div class="text-end item_quantity">
+                  <span class="pill-custom" id="Haldi Powder"></span>
+                </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="row px-4">
+        <button class="btn btn-secondary" onclick="sendMessage()">Whatsapp Order</button>
+      </div>
+      <div class="row mt-5">
+        <a class="text-end footer-text" href="mailto:ykumat@gmail.com">Made with <span class="text-danger">&hearts;</span> yashk</a>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script>
+      var list = {
+        "Sugar" : 0,
+        "Salt" : 0,
+        "Jaggery" : 0,
+        "Shabudana" : 0,
+        "Shengdana" : 0,
+        "Bhagar" : 0,
+        "Maida" : 0,
+        "Rawa" : 0,
+        "Poha" : 0,
+        "Tur Dal" : 0,
+        "Moong Dal" : 0,
+        "Masor Dal" : 0,
+        "Chana Dal" : 0,
+        "Vatana Dal" : 0,
+        "White Urad Dal" : 0,
+        "Black Urad Dal" : 0,
+        "Moth" : 0,
+        "Moong" :0,
+        "Soyabean" : 0,
+        "Masor" : 0,
+        "Chana" : 0,
+        "Vatana" : 0,
+        "Kaboli Chana" : 0,
+        "Oil" : 0,
+        "Soyabean" : 0,
+        "Pasta" : 0,
+        "Jeera" : 0,
+        "Mohari" : 0,
+        "Maggi Masala" : 0,
+        "Meat Masala" : 0,
+        "Fair & Lovely" : "",
+        "Ponds Powder": "",
+        "Dish Soap" : 0,
+        "Cloth Soap" : 0,
+        "Body Soap" : 0,
+        "Cloth Powder" : 0,
+        "Toothpaste" : 0,
+        "Masala" : "",
+        "Tea" : 0,
+        "Coffee" : 0,
+        "Mirchi Powder" : "",
+        "Haldi Powder" : ""
+      }
+
+      var message = "";
+
+      function add_item(item, quantity){
+        
+        var final_quantity = list[item]
+        var item = item
+        var measure = quantity[0]
+        var unit
+        var final_item
+
+        if(quantity[1]){
+          unit = quantity[1]
+          final_quantity += measure 
+          final_item = final_quantity + " " + unit
+          document.getElementById(item).innerHTML = final_item
+        }else{
+          unit = ""
+          final_quantity += measure + ". "
+          final_item = final_quantity
+          document.getElementById(item).innerHTML = final_item
+
+        }
+
+        list[item] = final_quantity
+
+      }
+
+      function add_item_type(item, type){
+        document.getElementById(item+ " Type").innerHTML = type
+      }
+
+
+      function sendMessage(){
+        // window.open(`https://wa.me/+919527526222?text=${list}`, '_blank');
+        var all = document.getElementsByClassName('list-group-item')
+        // all.forEach(element => {
+        //   console.log(element)
+        // });  
+        for (let index = 0; index < all.length; index++) {
+          const element = all[index];
+          var pill_custom = element.getElementsByClassName('pill-custom')
+          var pill_custom_type = element.getElementsByClassName('pill-custom-type')
+          var item = element.getElementsByClassName('title')
+          // if(pill_custom_type[0]){
+          //   console.log(pill_custom_type[0].innerHTML)
+          // }else{
+          //   console.log(pill_custom[0].innerHTML + " " + pill_custom_type[0].innerHTML)
+          // }
+
+          if(item[0].innerHTML && pill_custom[0].innerHTML ){
+            if(pill_custom_type[0]){
+              // console.log(item[0].innerHTML + " - " + pill_custom_type[0].innerHTML + " " + pill_custom[0].innerHTML)
+              message+=item[0].innerHTML + " - " + pill_custom_type[0].innerHTML + " " + pill_custom[0].innerHTML+ '\n'
+            }else{
+              // console.log(item[0].innerHTML+ " - " + pill_custom[0].innerHTML)
+              message+=item[0].innerHTML+ " - " + pill_custom[0].innerHTML+ '\n'
+            }
+          }
+        }
+        // console.log(message)
+        window.open(`https://wa.me/+919527526222?text=${message}`, '_blank');
+
+      }
+    </script>
+  </body>
+</html>
