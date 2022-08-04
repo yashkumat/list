@@ -615,11 +615,23 @@
                   <span class="pill-custom" id="Haldi Powder"></span>
                 </div>
             </li>
+            <li class="list-group-item">
+              <div class="fw-bold title">Other</div>
+              <textarea name="other" id="other" class="form-control mb-3" rows="3" ></textarea>
+              <div class="text-end item_quantity">
+                <span class="pill-custom" id="other"></span>
+              </div>
+            </li>
           </ol>
         </div>
       </div>
-      <div class="row px-4">
-        <button class="btn btn-secondary" onclick="sendMessage()">Whatsapp Order</button>
+      <div class="row my-3">
+        <div class="col-md-8 mb-3">
+          <input type="text" name="name" id="name" placeholder="Enter your name here ..." class="form-control" required>
+        </div>
+        <div class="col-md-4 d-grid mb-3">
+          <button class="btn btn-secondary btn-block" onclick="sendMessage()">Whatsapp Order</button>
+        </div>
       </div>
       <div class="row mt-5">
         <a class="text-end footer-text" href="mailto:ykumat@gmail.com">Made with <span class="text-danger">&hearts;</span> yashk</a>
@@ -704,6 +716,11 @@
 
       function sendMessage(){
         var all = document.getElementsByClassName('list-group-item')
+        
+        var other = document.getElementById('other').value
+        var name = document.getElementById('name').value
+        
+        message += name + '%0D%0A%0D%0A'
 
         for (let index = 0; index < all.length; index++) {
           const element = all[index];
@@ -719,6 +736,9 @@
             }
           }
         }
+        
+        message += other + '%0D%0A'
+        
         window.open(`https://wa.me/+919527526222?text=${message}`, '_blank');
       }
     </script>
